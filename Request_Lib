@@ -7,11 +7,11 @@
 		},
 		"entries": [
 			{
-				"startedDateTime": "2024-08-13T15:43:12.979Z",
-				"time": 11.43,
+				"startedDateTime": "2024-08-14T16:02:04.735Z",
+				"time": 9.943999999999999,
 				"request": {
 					"method": "POST",
-					"url": "http://localhost:8000/transaction/deposit",
+					"url": "http://localhost:8000/transaction/withdraw",
 					"httpVersion": "HTTP/1.1",
 					"cookies": [],
 					"headers": [
@@ -22,10 +22,6 @@
 						{
 							"name": "User-Agent",
 							"value": "insomnia/9.3.3"
-						},
-						{
-							"name": "Authorization",
-							"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzIzNTYyOTA5LCJleHAiOjE3MjM1NjM4MDl9.KyxCSUGXwuyYcjGkOE5mAaZWGUyIQejyrrL_gTUDuYw"
 						}
 					],
 					"queryString": [],
@@ -60,11 +56,11 @@
 						},
 						{
 							"name": "ETag",
-							"value": "W/\"54-9o9yhZx0N83jiw2b2bpiESaG3NY\""
+							"value": "W/\"54-/Xnnii3u9UtOHqCeBQGBM+3Lxhk\""
 						},
 						{
 							"name": "Date",
-							"value": "Tue, 13 Aug 2024 15:38:06 GMT"
+							"value": "Wed, 14 Aug 2024 15:58:02 GMT"
 						},
 						{
 							"name": "Connection",
@@ -78,7 +74,7 @@
 					"content": {
 						"size": 84,
 						"mimeType": "application/json; charset=utf-8",
-						"text": "{\"id\":10,\"userId\":1,\"date\":\"2024-08-13T15:38:06.459Z\",\"value\":1000,\"type\":\"DEPOSIT\"}"
+						"text": "{\"id\":2,\"userId\":1,\"date\":\"2024-08-14T15:58:02.402Z\",\"value\":1000,\"type\":\"WITHDRAW\"}"
 					},
 					"redirectURL": "",
 					"headersSize": -1,
@@ -90,18 +86,18 @@
 					"dns": -1,
 					"connect": -1,
 					"send": 0,
-					"wait": 11.43,
+					"wait": 9.943999999999999,
 					"receive": 0,
 					"ssl": -1
 				},
 				"comment": "Saque"
 			},
 			{
-				"startedDateTime": "2024-08-13T15:43:12.979Z",
-				"time": 0,
+				"startedDateTime": "2024-08-14T16:02:04.735Z",
+				"time": 29.441,
 				"request": {
 					"method": "POST",
-					"url": "http://localhost:8000/transaction/withdraw",
+					"url": "http://localhost:8000/transaction/deposit",
 					"httpVersion": "HTTP/1.1",
 					"cookies": [],
 					"headers": [
@@ -112,29 +108,59 @@
 						{
 							"name": "User-Agent",
 							"value": "insomnia/9.3.3"
-						},
-						{
-							"name": "Authorization",
-							"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzIzNTYyOTA5LCJleHAiOjE3MjM1NjM4MDl9.KyxCSUGXwuyYcjGkOE5mAaZWGUyIQejyrrL_gTUDuYw"
 						}
 					],
 					"queryString": [],
 					"postData": {
 						"mimeType": "application/json",
-						"text": "{\n\t\"amount\": 1000\n}"
+						"text": "{\n\t\"amount\": 20000\n}"
 					},
 					"headersSize": -1,
 					"bodySize": -1
 				},
 				"response": {
-					"status": 0,
-					"statusText": "",
+					"status": 201,
+					"statusText": "Created",
 					"httpVersion": "HTTP/1.1",
 					"cookies": [],
-					"headers": [],
+					"headers": [
+						{
+							"name": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"name": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"name": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"name": "Content-Length",
+							"value": "84"
+						},
+						{
+							"name": "ETag",
+							"value": "W/\"54-l/7jWuzG1xkeb77nHZ1Vy4ldPVE\""
+						},
+						{
+							"name": "Date",
+							"value": "Wed, 14 Aug 2024 15:57:58 GMT"
+						},
+						{
+							"name": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"name": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
 					"content": {
-						"size": 0,
-						"mimeType": ""
+						"size": 84,
+						"mimeType": "application/json; charset=utf-8",
+						"text": "{\"id\":1,\"userId\":1,\"date\":\"2024-08-14T15:57:58.898Z\",\"value\":20000,\"type\":\"DEPOSIT\"}"
 					},
 					"redirectURL": "",
 					"headersSize": -1,
@@ -146,15 +172,15 @@
 					"dns": -1,
 					"connect": -1,
 					"send": 0,
-					"wait": 0,
+					"wait": 29.441,
 					"receive": 0,
 					"ssl": -1
 				},
 				"comment": "Depósito"
 			},
 			{
-				"startedDateTime": "2024-08-13T15:43:12.979Z",
-				"time": 19.196,
+				"startedDateTime": "2024-08-14T16:02:04.735Z",
+				"time": 4.687,
 				"request": {
 					"method": "GET",
 					"url": "http://localhost:8000/transaction/list?startDate=2024-08-10&endDate=2024-08-15",
@@ -164,10 +190,6 @@
 						{
 							"name": "User-Agent",
 							"value": "insomnia/9.3.3"
-						},
-						{
-							"name": "Authorization",
-							"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzIzNTYyOTA5LCJleHAiOjE3MjM1NjM4MDl9.KyxCSUGXwuyYcjGkOE5mAaZWGUyIQejyrrL_gTUDuYw"
 						}
 					],
 					"queryString": [],
@@ -198,15 +220,15 @@
 						},
 						{
 							"name": "Content-Length",
-							"value": "508"
+							"value": "171"
 						},
 						{
 							"name": "ETag",
-							"value": "W/\"1fc-orEeNgT4NgHucRUmBchDgZMX5uo\""
+							"value": "W/\"ab-Al+tXrwbYNLySwait7EiJilMal8\""
 						},
 						{
 							"name": "Date",
-							"value": "Tue, 13 Aug 2024 15:40:15 GMT"
+							"value": "Wed, 14 Aug 2024 15:58:04 GMT"
 						},
 						{
 							"name": "Connection",
@@ -218,9 +240,9 @@
 						}
 					],
 					"content": {
-						"size": 508,
+						"size": 171,
 						"mimeType": "application/json; charset=utf-8",
-						"text": "[{\"id\":2,\"userId\":1,\"date\":\"2024-08-13T15:12:15.531Z\",\"value\":1000,\"type\":\"DEPOSIT\"},{\"id\":6,\"userId\":1,\"date\":\"2024-08-13T15:13:48.387Z\",\"value\":1000,\"type\":\"DEPOSIT\"},{\"id\":7,\"userId\":1,\"date\":\"2024-08-13T15:13:53.604Z\",\"value\":1000,\"type\":\"WITHDRAW\"},{\"id\":8,\"userId\":1,\"date\":\"2024-08-13T15:14:05.571Z\",\"value\":1000,\"type\":\"WITHDRAW\"},{\"id\":9,\"userId\":1,\"date\":\"2024-08-13T15:37:56.962Z\",\"value\":1000,\"type\":\"DEPOSIT\"},{\"id\":10,\"userId\":1,\"date\":\"2024-08-13T15:38:06.459Z\",\"value\":1000,\"type\":\"DEPOSIT\"}]"
+						"text": "[{\"id\":1,\"userId\":1,\"date\":\"2024-08-14T15:57:58.898Z\",\"value\":20000,\"type\":\"DEPOSIT\"},{\"id\":2,\"userId\":1,\"date\":\"2024-08-14T15:58:02.402Z\",\"value\":1000,\"type\":\"WITHDRAW\"}]"
 					},
 					"redirectURL": "",
 					"headersSize": -1,
@@ -232,14 +254,14 @@
 					"dns": -1,
 					"connect": -1,
 					"send": 0,
-					"wait": 19.196,
+					"wait": 4.687,
 					"receive": 0,
 					"ssl": -1
 				},
 				"comment": "Listar Transações"
 			},
 			{
-				"startedDateTime": "2024-08-13T15:43:12.979Z",
+				"startedDateTime": "2024-08-14T16:02:04.735Z",
 				"time": 3.548,
 				"request": {
 					"method": "GET",
@@ -250,10 +272,6 @@
 						{
 							"name": "User-Agent",
 							"value": "insomnia/9.3.2"
-						},
-						{
-							"name": "Authorization",
-							"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzIzNTYyOTA5LCJleHAiOjE3MjM1NjM4MDl9.KyxCSUGXwuyYcjGkOE5mAaZWGUyIQejyrrL_gTUDuYw"
 						}
 					],
 					"queryString": [],
@@ -325,7 +343,7 @@
 				"comment": "Ver Perfil do Usuário"
 			},
 			{
-				"startedDateTime": "2024-08-13T15:43:12.979Z",
+				"startedDateTime": "2024-08-14T16:02:04.735Z",
 				"time": 0,
 				"request": {
 					"method": "POST",
@@ -336,10 +354,6 @@
 						{
 							"name": "User-Agent",
 							"value": "insomnia/9.3.2"
-						},
-						{
-							"name": "Authorization",
-							"value": "Refresh eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzIzNTYyOTA5LCJleHAiOjE3MjM2NDkzMDl9.Fq3qKcKDme-cC65np3sX_BAtoUKHd6QYB1mod_j38dw"
 						}
 					],
 					"queryString": [],
@@ -377,8 +391,8 @@
 				"comment": "Refresh Token"
 			},
 			{
-				"startedDateTime": "2024-08-13T15:43:12.979Z",
-				"time": 57.347,
+				"startedDateTime": "2024-08-14T16:02:04.735Z",
+				"time": 56.529999999999994,
 				"request": {
 					"method": "POST",
 					"url": "http://localhost:8000/auth/login",
@@ -426,11 +440,11 @@
 						},
 						{
 							"name": "ETag",
-							"value": "W/\"18f-aLYkTbHSJ2D9pQiDrGwaJvvAt5k\""
+							"value": "W/\"18f-gPcf3gYyZdkObAdW9t5RBJ9vhns\""
 						},
 						{
 							"name": "Date",
-							"value": "Tue, 13 Aug 2024 15:28:39 GMT"
+							"value": "Wed, 14 Aug 2024 15:57:28 GMT"
 						},
 						{
 							"name": "Connection",
@@ -444,7 +458,7 @@
 					"content": {
 						"size": 399,
 						"mimeType": "application/json; charset=utf-8",
-						"text": "{\"user\":{\"id\":1,\"document\":\"52849186813\",\"name\":\"Marcelo\",\"value\":4000},\"backendTokens\":{\"accessToken\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzIzNTYyOTE5LCJleHAiOjE3MjM1NjM4MTl9.Z6FYRrzSO9DQOitZAxEHxmTMiJ80U17qj9rzIc_Kjmg\",\"refreshToken\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzIzNTYyOTE5LCJleHAiOjE3MjM2NDkzMTl9.xe3LxS7st2Mgp9NxC3lNPAiLq0okJMcBBsehTigoS7M\"}}"
+						"text": "{\"user\":{\"id\":1,\"document\":\"52849186813\",\"name\":\"Marcelo\",\"value\":2000},\"backendTokens\":{\"accessToken\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzIzNjUxMDQ4LCJleHAiOjE3MjM2NTE5NDh9.Y0SUJYvh2OgJq-1lUfjrOlsBUzCI0Z9gi341ctPGaDk\",\"refreshToken\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzIzNjUxMDQ4LCJleHAiOjE3MjM3Mzc0NDh9.dYKdKAVuw7QTCdkttKdNNkkG0dN9vqGXc4hZ6YP-g-0\"}}"
 					},
 					"redirectURL": "",
 					"headersSize": -1,
@@ -456,15 +470,15 @@
 					"dns": -1,
 					"connect": -1,
 					"send": 0,
-					"wait": 57.347,
+					"wait": 56.529999999999994,
 					"receive": 0,
 					"ssl": -1
 				},
 				"comment": "Login"
 			},
 			{
-				"startedDateTime": "2024-08-13T15:43:12.979Z",
-				"time": 4.988,
+				"startedDateTime": "2024-08-14T16:02:04.735Z",
+				"time": 67.282,
 				"request": {
 					"method": "POST",
 					"url": "http://localhost:8000/auth/register",
@@ -489,8 +503,8 @@
 					"bodySize": -1
 				},
 				"response": {
-					"status": 409,
-					"statusText": "Conflict",
+					"status": 201,
+					"statusText": "Created",
 					"httpVersion": "HTTP/1.1",
 					"cookies": [],
 					"headers": [
@@ -508,15 +522,15 @@
 						},
 						{
 							"name": "Content-Length",
-							"value": "74"
+							"value": "63"
 						},
 						{
 							"name": "ETag",
-							"value": "W/\"4a-36A3i68VYCb/hpZQ5rTDp82xZ2E\""
+							"value": "W/\"3f-0k/q3e9oXV3O0Q7PA7aJp30Wjnc\""
 						},
 						{
 							"name": "Date",
-							"value": "Tue, 13 Aug 2024 14:06:33 GMT"
+							"value": "Wed, 14 Aug 2024 15:57:26 GMT"
 						},
 						{
 							"name": "Connection",
@@ -528,9 +542,9 @@
 						}
 					],
 					"content": {
-						"size": 74,
+						"size": 63,
 						"mimeType": "application/json; charset=utf-8",
-						"text": "{\"message\":\"Document already on use!\",\"error\":\"Conflict\",\"statusCode\":409}"
+						"text": "{\"id\":1,\"document\":\"52849186813\",\"name\":\"Marcelo\",\"value\":2000}"
 					},
 					"redirectURL": "",
 					"headersSize": -1,
@@ -542,7 +556,7 @@
 					"dns": -1,
 					"connect": -1,
 					"send": 0,
-					"wait": 4.988,
+					"wait": 67.282,
 					"receive": 0,
 					"ssl": -1
 				},
