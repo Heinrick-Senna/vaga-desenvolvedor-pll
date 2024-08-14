@@ -1,7 +1,6 @@
 import { Module } from '@nestjs/common';
 import { AuthModule } from './auth/auth.module';
 import { UserModule } from './user/user.module';
-import { PrismaService } from './prisma.service';
 import { TransactionsModule } from './transactions/transactions.module';
 import { ConfigModule } from '@nestjs/config';
 
@@ -15,6 +14,6 @@ import { ConfigModule } from '@nestjs/config';
     TransactionsModule
   ],
   controllers: [],
-  providers: [PrismaService],
+  providers: [],
 })
 export class AppModule { }

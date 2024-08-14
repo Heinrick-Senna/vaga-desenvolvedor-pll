@@ -1,6 +1,5 @@
 import { ForbiddenException, Injectable } from '@nestjs/common';
-import { PrismaClient, TransactionType } from '@prisma/client';
-import { PrismaClientOptions } from '@prisma/client/runtime/library';
+import { TransactionType, Prisma } from '@prisma/client';
 import { PrismaService } from 'src/prisma.service';
 import { UserService } from 'src/user/user.service';
 
@@ -46,9 +45,7 @@ export class TransactionsService {
       },
     });
 
-    const transactionDetails = await this.createTransactionLog({ userId, transactionValue, type });
-
-    return transactionDetails;
+    return await this.createTransactionLog({ userId, transactionValue, type });
   }
 
   async createTransactionLog({ userId, transactionValue, type }: ITransactionParameters) {
@@ -62,7 +59,7 @@ export class TransactionsService {
   }
 
   async listTransactions({userId, start, end}:ITransactionList) {
-    const queryObject = {
+    const queryObject: Prisma.TransactionWhereInput = {
       userId: userId,
       date: {}
     }
