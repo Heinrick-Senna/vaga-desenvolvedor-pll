@@ -1,10 +1,12 @@
-import { IsString, Matches, MinLength } from "class-validator";
+import { IsString, Matches, MinLength, Validate } from "class-validator";
+import { IsDocumentValidConstraint } from "src/lib/constants";
 
 export class CreateUserDto {
   @IsString()
   name: string;
 
   @IsString()
+  @Validate(IsDocumentValidConstraint)
   document: string;
 
   @IsString()
